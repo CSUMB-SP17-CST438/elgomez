@@ -15,10 +15,10 @@ from boto.s3.connection import S3Connection
 
 
 #Variables that contains the user credentials to access Twitter API 
-access_token = S3Connection(os.environ["access_token_twitter"])
-access_token_secret =  S3Connection(os.environ['access_token_secret_twitter'])
-consumer_key =  S3Connection(os.environ['consumer_key_twitter'])
-consumer_secret = S3Connection(os.environ['consumer_secret_twitter'])
+access_token = os.environ['access_token_twitter']
+access_token_secret =  os.environ['access_token_secret_twitter']
+consumer_key =  os.environ['consumer_key_twitter']
+consumer_secret = os.environ['consumer_secret_twitter']
 
 
 
