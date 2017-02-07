@@ -15,10 +15,10 @@ from boto.s3.connection import S3Connection
 
 
 #Variables that contains the user credentials to access Twitter API 
-access_token = os.environ['access_token_twitter']
-access_token_secret =  os.environ['access_token_secret_twitter']
-consumer_key =  os.environ['consumer_key_twitter']
-consumer_secret = os.environ['consumer_secret_twitter']
+access_token = "wVTDvxcplRPYgFRg0oM3vYySiBgfw34TIa6pTYL1q3J4s"
+access_token_secret =  "4504778418-huImFlyGkXdKt77w0tjzCiFUbOL2ATkZ0zrpSah"
+consumer_key = "jv0hQDXfG5AUk55nhzKCx54yG"
+consumer_secret = "2RExZWtGdsKXFtDv6m1w4p6RN0Yba9ihkzk6cS7Lx51vDfYWfz"
 
 
 
@@ -85,7 +85,7 @@ def index():
     url =  "https://api.gettyimages.com/v3/search/images?fields=id,title,comp,referral_destinations&sort_order=best&phrase=patriotic"
 
     my_headers = {
-        "Api-key": S3Connection(os.environ['Getty_Api'])
+        "Api-key": "fu3ea6szaq4hefngrbagnq42"
         
     }
     
