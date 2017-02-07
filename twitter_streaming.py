@@ -15,10 +15,10 @@ from boto.s3.connection import S3Connection
 
 
 #Variables that contains the user credentials to access Twitter API 
-access_token = "wVTDvxcplRPYgFRg0oM3vYySiBgfw34TIa6pTYL1q3J4s"
-access_token_secret =  "4504778418-huImFlyGkXdKt77w0tjzCiFUbOL2ATkZ0zrpSah"
-consumer_key = "jv0hQDXfG5AUk55nhzKCx54yG"
-consumer_secret = "2RExZWtGdsKXFtDv6m1w4p6RN0Yba9ihkzk6cS7Lx51vDfYWfz"
+access_token = os.environ['access_token_twitter']
+access_token_secret = os.environ['tokenSecret']
+consumer_key =  os.environ['consumer_key_twitter']
+consumer_secret = os.environ['consumer_secret_twitter']
 
 
 
@@ -82,10 +82,10 @@ def index():
         n2 = random.randint(1, len(alltweets))
         string = alltweets2[n2].text + "\nUser:DonaldJTrumpQ\n" + "\n Source: https://twitter.com/statuses/" + str(alltweets2[n2].id)
     
-    url =  "https://api.gettyimages.com/v3/search/images?fields=id,title,comp,referral_destinations&sort_order=best&phrase=patriotic"
+    url =  "https://api.gettyimages.com/v3/search/images?page_size230,fields=id,title,comp,referral_destinations&sort_order=best&phrase=patriotic"
 
     my_headers = {
-        "Api-key": "fu3ea6szaq4hefngrbagnq42"
+        "Api-key": os.getenv("getty_Api")
         
     }
     
@@ -96,7 +96,7 @@ def index():
     #print json.dumps(json_body,indent = 2)
     #print json_body["images"][10]["display_sizes"][0]["uri"]
     urls  = []
-    for i in range (0,20):
+    for i in range (0,30):
         urls.append(json_body["images"][i]["display_sizes"][0]["uri"])
     
     print len(urls)
